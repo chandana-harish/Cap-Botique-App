@@ -9,4 +9,4 @@ spec:
   ports:
     - targetPort: 3015
       port: 3015
-  type: ClsuterIP
+  type: ClusterIP
