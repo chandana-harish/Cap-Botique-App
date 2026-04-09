@@ -50,7 +50,7 @@ spec:
     metadata:
       - name: my-storage 
     spec:
-      accessMode: ["ReadWriteMany"]
+      accessModes: ["ReadWriteMany"]
       resources:
         requests:
           storage: "2Gi"
