@@ -11,7 +11,8 @@ spec:
       maxUnavailable: 1
       maxSurge: 1 
   selector:
-    app: cap 
+    matchLabels:
+      app: cap 
   template:
     metadata:
       labels:
