@@ -21,7 +21,7 @@ spec:
       containers:
         - name: cap-cont 
           image: chandu554/cap1:v1.1.0
-          port:
+          ports:
             - containerPort: 3015 
           resources:
             requests:
