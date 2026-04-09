@@ -49,7 +49,7 @@ spec:
           volumeMounts:
             - name: my-storage
               mountPath: /data/db 
-  volumeClaimTemplates:
+  volumeClaimTemplate:
     metadata:
       name: my-storage 
     spec:
