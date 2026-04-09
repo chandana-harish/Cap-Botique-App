@@ -1,0 +1,25 @@
+apiVersion: gateway.networking.io/v1 
+kind:  HTTPRoute 
+metadata:
+  name: route-cap 
+  namespace: cap 
+spec:
+  parentRefs:
+    - name: gateway 
+  rules:
+    - matches:
+      - path:
+          type: PathPrefix
+          value: /
+      filters:
+        - type: URLRewrite 
+          urlRewrite: 
+            path:
+              type: ReplacePrefixMatch
+              replacePrefixMatch: / 
+      backendRefs:
+        - name: frontend-service 
+          port: 3015
+
+           
+          
