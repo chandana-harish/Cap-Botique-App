@@ -53,5 +53,5 @@ spec:
       accessModes: ["ReadWriteMany"]
       resources:
         requests:
-          storage: "2Gi"
-      storageClassName: nfs-csi2 
+          storage: 2Gi
+      storageClassName: "nfs-csi2" 
