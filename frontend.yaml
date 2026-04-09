@@ -46,3 +46,15 @@ spec:
                 secretKeyRef:
                   name: cap-secret
                   key: SESSION_SECRET
+          volumeMounts:
+            - name: my-storage
+              mountPath: /data/db 
+  volumeClaimTemplates:
+    metadata:
+      name: my-storage 
+    spec:
+      accessMode: ["ReadWriteMany"]
+      resources:
+        requests:
+          storage: "2Gi"
+      storageClassName: nfs-csi2 
