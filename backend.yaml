@@ -1,0 +1,44 @@
+apiVersion: apps/v1 
+kind: StatefulSet 
+metadata:
+  name: bcap-back 
+  namespace: cap 
+spec:
+  replicas: 1
+  minReadySeconds: 10 
+  selector:
+    matchLabels:
+      apps: caps 
+  template:
+    metadata:
+      labels:
+        apps: caps
+    spec:
+      teminationGracePeriodSecomds: 10 
+      containers:
+        - name: back-cont 
+          image: mongo 
+          port: 27017
+          resources:
+            request:
+              cpu: "100m"
+              memory: "129Mi"
+            limits:
+              cpu: "300m"
+              memory: "400Mi"
+          env:
+            - name: MONGO_URI
+              valueFrom:
+                secretKeyRef:
+                  name: cap-secret
+                  key: MONGO_URI
+            - name: PORT
+              valueFrom:
+                secretKeyRef:
+                  name: cap-secret
+                  key:  PORT
+            - name: SESSION_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: cap-secret
+                  key: SESSION_SECRET
