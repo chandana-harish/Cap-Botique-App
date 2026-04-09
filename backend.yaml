@@ -48,7 +48,7 @@ spec:
               mountPath: /data/db 
   volumeClaimTemplates:
     - metadata:
-        - name: my-storage 
+        name: my-storage 
       spec:
         accessModes: ["ReadWriteMany"]
         resources:
