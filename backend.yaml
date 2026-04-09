@@ -14,7 +14,7 @@ spec:
       labels:
         apps: caps
     spec:
-      teminationGracePeriodSeconds: 10 
+      terminationGracePeriodSeconds: 10 
       containers:
         - name: back-cont 
           image: mongo 
