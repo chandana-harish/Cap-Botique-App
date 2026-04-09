@@ -30,18 +30,18 @@ spec:
               cpu: "200m"
               memory: "512Mi"
           env:
-            name: MONGO_URI
-            valueFrom:
-              secretKeyRef:
-                name: cap-secret
-                key: MONGO_URI
-            name: PORT
-            valueFrom:
-              secretKeyRef:
-                name: cap-secret
-                key: PORT
-            name: SESSION_SECRET
-            valueFrom:
-              secretKeyRef:
-                name: cap-secret
-                key: SESSION_SECRET
+            - name: MONGO_URI
+              valueFrom:
+                secretKeyRef:
+                  name: cap-secret
+                  key: MONGO_URI
+            - name: PORT
+              valueFrom:
+                secretKeyRef:
+                  name: cap-secret
+                  key: PORT
+            - name: SESSION_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: cap-secret
+                  key: SESSION_SECRET
